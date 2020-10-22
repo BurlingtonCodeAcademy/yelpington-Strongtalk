@@ -1,0 +1,13 @@
+{
+    "id": "cosmic-grind",
+    "name": "Cosmic Grind",
+    "address": "104 Church St, Burlington, VT 05401",
+    "phone number": "(802) 734-1963",
+    "hours": "10:00 am - 2:00 pm",
+    "notes": [
+      "Their Chai Latte is amazing",
+      "Sometimes you'll be graced by Stanley's presence"
+    ],
+    "latitude": "44.477770",
+    "longitude": "-73.212369"
+  }
