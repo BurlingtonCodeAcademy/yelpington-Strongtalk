@@ -2,11 +2,11 @@
     "id": "flatbread",
     "name": "Flatbread",
     "address": "115 St Paul St, Burlington, VT 05401",
-    "phone number": "(802) 861-2999",
+    "phonenumber": "(802) 861-2999",
     "hours": "12:00pm - 9:00pm",
     "notes": [
         "Always surprised by their specials",
-        "Reccomend one of their drafts along with any pie"
+        "Reccommend one of their drafts along with any pie"
     ],
     "latitude": "44.476719",
     "longitude": "-73.214286"

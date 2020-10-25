@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yelpington</title>
+    <!-- This is the Leaflet MAP HTML & JS link-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!-- CSS Link-->
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- YELPINGTON MAP-->
+    <div id="header-container">
+      <h1>Yelpington</h1>
+    </div>
+    <div class="main">
+      <div class="restInfo">
+        <h2 id="name"></h2>
+        <div id="address"></div>
+        <div id="hours"></div>
+        <div id="phone-number"></div>
+        <div id="notes"></div>
+      </div>
+      <div id="map-container"></div>
+    </div>
+    <section class="footerwrapper-rest">
+      <footer class="footer">
+        <div class="footer-title-rest">
+          <h1>Share your Experience!</h1>
+        </div>
+        <div class="footer-bottom-wrap">
+          <div class="footer-left">
+            <div class="footer-info">
+              <div class="data-info-wrap">
+                <div class="footer-name">
+                  <input class="data-box" type="text" placeholder="Name" />
+                </div>
+              </div>
+              <div class="text-wrap">
+                <textarea
+                  name=""
+                  id=""
+                  cols="75"
+                  rows="12"
+                  placeholder="Leave a Review..."
+                ></textarea>
+              </div>
+              <button class="submit">Submit!</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="singleRestPage.js"></script>
+  </body>
+</html>
