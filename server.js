@@ -21,7 +21,7 @@ app.get('/api', (req, res) => {
  app.get('/api/:id', (req, res) => {
    res.sendFile(path.resolve(`./JSONs/${req.params.id}.json`))
  }) 
-
+// This is 
  app.get('/restaurant', (req, res) => {
    res.sendFile(path.resolve(`./public/singleRestPage.html`))
  })

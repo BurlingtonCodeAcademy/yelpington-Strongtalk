@@ -1,3 +1,4 @@
+// This is the starting zoomed location
 let myMap = L.map("map-container").setView([44.47817, -73.21265], 16);
 
 // imported style for home page map
@@ -9,14 +10,12 @@ L.tileLayer(
       '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
   }
 ).addTo(myMap);
+
 // below is where i was stuck... stuck on fetch, wont readline 29
 // this takes from url and sanitizes THEN turns array into id
 let url = window.location.search;
-console.log(url);
 let urlArray = url.split("?");
-console.log(urlArray);
 let urlId = urlArray.pop();
-console.log(urlId);
 
 // DOMS
 let htmlName = document.getElementById("name");
@@ -25,7 +24,7 @@ let htmlAddress = document.getElementById("address");
 let htmlHours = document.getElementById("hours");
 let htmlNotes = document.getElementById("notes");
 
-// this async function should be grabbing restaurant details with a fetch
+// this function takes restaurant info from their json's and running it against the api, then bringing back respective specifics
 function restDetails() {
   // at this point "restaurant" is an array list of each restaurant's name
   fetch(`/api/${urlId}`)
@@ -40,10 +39,9 @@ function restDetails() {
       htmlNotes.innerHTML = restSpecs.notes.join("<br/><br/>");
 
       let latLong = [restSpecs.latitude, restSpecs.longitude];
-      myMap.setView(latLong, 17)
+      myMap.setView(latLong, 17);
 
-      L.marker(latLong).addTo(myMap)
-      //sidebar.appendChild(anchor); // generates sidebar achor links for each restaurant
+      L.marker(latLong).addTo(myMap);
     });
 }
 restDetails();

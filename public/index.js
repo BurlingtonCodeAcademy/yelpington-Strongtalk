@@ -20,33 +20,33 @@ function fetchRestName() {
     .then((res) => {
       return res.json();
     })
-    .then((jsonObj) => {   // jsonObj at this point is the fetched retun of /api aka restaurant names
-      console.log(jsonObj)
-      jsonObj.restaurants.forEach((id) => {  // <---- thank you Michael & Bob 
-        let restaurant = id;                 // line 25 turns jsonObj contents into an array 
+    .then((jsonObj) => {
+      // jsonObj at this point is the fetched retun of /api aka restaurant names
+      console.log(jsonObj);
+      jsonObj.restaurants.forEach((id) => {
+        // <---- thank you Michael & Bob
+        let restaurant = id; // line 25 turns jsonObj contents into an array
         console.log(restaurant);
         // at this point "restaurant" is an array list of each restaurant's name
         fetch(`/api/${restaurant}`)
           .then((res) => res.json())
-          .then((listData) => { // this returns the json obj of each restaurant
+          .then((listData) => {
+            // this returns the json obj of each restaurant
             console.log(listData);
             let dispRestName = listData.name; // this grabs the name key out of each JSON object
 
-            let latLong = [listData.latitude, listData.longitude];  // this is retrieving the lat, long values of each Json
-            let markCoord = id + "coord";   // a variable for restaurant id + coordinate 
+            let latLong = [listData.latitude, listData.longitude]; // this is retrieving the lat, long values of each Json
+            let markCoord = id + "coord"; // a variable for restaurant id + coordinate
 
-            markCoord = L.marker(latLong).addTo(myMap) // this is creating an icon for each restaurant
-            markCoord.bindTooltip(dispRestName);  // icons say restaurant name when hovered over
-              
-            sidebar.innerHTML += `<div class='linkContainer'> <a class='links' href='/restaurant?${restaurant}'>${dispRestName}</a></div>`
-           
+            markCoord = L.marker(latLong).addTo(myMap); // this is creating an icon for each restaurant
+            markCoord.bindPopup(
+              `<a class='links' href='/restaurant?${restaurant}'>${dispRestName}</a>`
+            ); // icons say restaurant name when hovered over
 
-            nameTag.textContent = name;
-            console.log(nameTag)
-            sidebar.appendChild(anchor); // generates sidebar achor links for each restaurant
+            // generates sidebar anchor links for each restaurant
+            sidebar.innerHTML += `<div class='linkContainer'> <a class='links' href='/restaurant?${restaurant}'>${dispRestName}</a></div>`;
           });
       });
     });
 }
 fetchRestName();
-
